@@ -7,12 +7,12 @@
 #include <sys/reent.h>
 #include <switch_min/kernel/ipc.h>
 
-#include "saltysd/saltysd_core.h"
-#include "saltysd/saltysd_ipc.h"
-#include "saltysd/saltysd_dynamic.h"
-#include "saltysd/saltysd_helper.hpp"
+#include "framework/saltysd/saltysd_core.h"
+#include "framework/saltysd/saltysd_ipc.h"
+#include "framework/saltysd/saltysd_dynamic.h"
+#include "framework/saltysd/saltysd_helper.h"
 
-#include "useful/useful.h"
+#include "framework/useful/useful.h"
 #include "mods.h"
 
 extern "C" {
@@ -78,6 +78,7 @@ int main(int argc, char *argv[]) {
 
 	//plugin::script_mods::script_replacement();
 	plugin::code_mods::ledges();
+	plugin::code_mods::limitedRegrabs();
 
 	__libnx_exit(0);
 }

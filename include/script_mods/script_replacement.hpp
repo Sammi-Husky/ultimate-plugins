@@ -2,14 +2,15 @@
 
 #include <stdint.h>
 
-#include "../../useful/crc32.h"
-#include "../../useful/useful.h"
-#include "../../useful/const_value_table.h"
-#include "../../useful/raygun_printer.hpp"
+#include "framework/useful/crc32.h"
+#include "framework/useful/useful.h"
+#include "framework/useful/const_value_table.h"
+#include "framework/useful/raygun_printer.h"
 
-#include "../../saltysd/nn_ro.hpp"
+#include "framework/saltysd/nn_ro.h"
+#include "framework/saltysd/saltysd_dynamic.h"
 
-#include "../../acmd_wrapper.hpp"
+#include "framework/acmd_wrapper.h"
 
 using namespace lib;
 using namespace app::sv_animcmd;

@@ -31,9 +31,10 @@ include $(DEVKITPRO)/libnx/switch_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	dev
 BUILD		:=	build
-SOURCES		:=	source source/saltysd source/plugin/code_mods source/plugin/script_mods
+SOURCES		:=	source source/code_mods source/script_mods \
+				external/framework/source external/framework/source/saltysd external/framework/source/imports/lib external/framework/source/useful
 DATA		:=	data
-INCLUDES	:=	include
+INCLUDES	:=	include external/framework/include
 EXEFS_SRC	:=	exefs_src
 
 #---------------------------------------------------------------------------------
