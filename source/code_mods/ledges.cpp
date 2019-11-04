@@ -24,18 +24,15 @@ using namespace lib;
 //=============Ledge Hogging===============//
 //=========================================//
 Vector3f ledge_pos[8];
-
 u64 
 __entry_cliff(u64 boma) {
 	// Flag this cliff as occupied
 	int entry_id = WorkModule::get_int(boma, FIGHTER_INSTANCE_WORK_ID_INT_ENTRY_ID);	
 	ledge_pos[entry_id] = *(Vector3f*)GroundModule::hang_cliff_pos_3f(boma);
-	print_string(boma,"hello");
-	SaltySD_printf("why hello there");
-
+	
 	// Call base func
 	u64 ground_module = load_module(boma,0x58);
-	return ((int (*)(u64))(load_module_impl(ground_module, 0x220)))(ground_module);
+	return ((int (*)(u64))(load_module_impl(ground_module, 0x228)))(ground_module);
 }
 
 u64 
@@ -56,7 +53,7 @@ __can_entry_cliff(u64 boma) {
 
 	// Call base func
 	u64 ground_module = load_module(boma, 0x58);
-	return ((int (*)(u64))(load_module_impl(ground_module, 0x230)))(ground_module);
+	return ((int (*)(u64))(load_module_impl(ground_module, 0x238)))(ground_module);
 }
 
 u64 
@@ -67,7 +64,7 @@ __leave_cliff(u64 boma) {
 
 	// Call base func
 	u64 ground_module = load_module(boma, 0x58);	
-	return ((int (*)(u64))(load_module_impl(ground_module, 0x248)))(ground_module);
+	return ((int (*)(u64))(load_module_impl(ground_module, 0x250)))(ground_module);
 }
 
 int

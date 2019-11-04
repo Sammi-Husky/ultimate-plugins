@@ -14,6 +14,7 @@
 
 #include "framework/useful/useful.h"
 #include "mods.h"
+#include "logging.h"
 
 extern "C" {
 	extern u32 __start__;
@@ -59,9 +60,11 @@ void __attribute__((weak)) NORETURN __libnx_exit(int rc) {
 	__nx_exit(0, orig_saved_lr);
 	while (true);
 }
+
 int main(int argc, char *argv[]) {
 	SaltySD_printf("SaltySD Plugin: alive\n");
-	
+
+	// syslogger_send("Hello from plugin!!");
 	// Get anchor for imports
 	// do not remove if you plan on using IMPORT
 	ANCHOR_ABS = SaltySDCore_getCodeStart();
@@ -77,6 +80,15 @@ int main(int argc, char *argv[]) {
 	//SaltySD_function_replace_sym("_ZN3lib8L2CAgent15clear_lua_stackEv", (u64) &clear_lua_stack_replace);
 
 	//plugin::script_mods::script_replacement();
+    FILE* f = SaltySDCore_fopen("sdmc:/SaltySD/syslog.conf", "w");
+	if (f) {
+		SaltySD_printf("Writing config file...\n");
+		char buffer[20];
+		snprintf(buffer, 20, "%lx", (u64)&logger);
+		SaltySDCore_fwrite(buffer, strlen(buffer), 1, f);
+		SaltySDCore_fclose(f);
+	}
+
 	plugin::code_mods::ledges();
 	plugin::code_mods::limitedRegrabs();
 

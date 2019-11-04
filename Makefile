@@ -59,7 +59,7 @@ LIBS	:= -lnx_min -lm
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:= $(PORTLIBS) $(LIBNX) $(CURDIR)/lib/libnx_min/
+LIBDIRS	:= $(PORTLIBS) $(CURDIR)/lib/libnx_min/
 
 
 #---------------------------------------------------------------------------------
