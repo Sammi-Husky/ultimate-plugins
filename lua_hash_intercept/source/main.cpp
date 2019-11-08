@@ -71,7 +71,7 @@ u64 test_replace(const char *message, u64 len)
 	u64 jumpback = orig_func + (4*4);
 	log_message("7103580C20: %s\n", message);
 	asm("MOV X11, %x0" : : "r"(jumpback));
-    asm("MOV X0, %x0" : : "r"(message));
+	asm("MOV X0, %x0" : : "r"(message));
 	asm("MOV x1, %x0" : : "r"(len));
 
 	asm("MOV	x9, 0xEB4F");
