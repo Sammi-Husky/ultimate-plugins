@@ -32,7 +32,7 @@ __entry_cliff(u64 boma) {
 	
 	// Call base func
 	u64 ground_module = load_module(boma,0x58);
-	return ((int (*)(u64))(load_module_impl(ground_module, 0x228)))(ground_module);
+	return ((int (*)(u64))(load_module_impl(ground_module, 0x248)))(ground_module);
 }
 
 u64 
@@ -53,7 +53,7 @@ __can_entry_cliff(u64 boma) {
 
 	// Call base func
 	u64 ground_module = load_module(boma, 0x58);
-	return ((int (*)(u64))(load_module_impl(ground_module, 0x238)))(ground_module);
+	return ((int (*)(u64))(load_module_impl(ground_module, 0x258)))(ground_module);
 }
 
 u64 
@@ -64,7 +64,7 @@ __leave_cliff(u64 boma) {
 
 	// Call base func
 	u64 ground_module = load_module(boma, 0x58);	
-	return ((int (*)(u64))(load_module_impl(ground_module, 0x250)))(ground_module);
+	return ((int (*)(u64))(load_module_impl(ground_module, 0x270)))(ground_module);
 }
 
 int
