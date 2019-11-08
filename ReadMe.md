@@ -1,9 +1,11 @@
  # Usage
- - copy the compiled elf into `sd:SaltySD/plugins/`
- - if you don't want to or can't compile, there is occasional releases of things in the Releases tab.
+ - Compiled elfs are placed in the `./plugins` directory. Copy the desired plugin(s) from there to the `./SaltySD/Plugins` folder on your SD card
  
 # Compiling
+ - `git clone --recursive https://github.com/Sammi-Husky/ultimate-plugins.git`
+ - `cd ultimate-plugins`
+ - `make`
 
+ # Requirements
  - Needs DevkitPro with DevkitA64 installed
  - Tested with DevkitA64 r13
- - Links against an included stripped down version of libnx v2.2.0 modified to work with SaltyNX

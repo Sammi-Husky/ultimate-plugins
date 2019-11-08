@@ -1,0 +1,3 @@
+[submodule "code-mod-framework"]
+	path = code-mod-framework
+	url = https://github.com/ultimate-research/code-mod-framework.git
