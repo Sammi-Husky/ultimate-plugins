@@ -6,14 +6,15 @@
 
 LogPacket logger;
 
-// Timeout in miliseconds
 #define TIMEOUT_SECONDS 1
 #define SLEEP 100000
 #define TIMEOUT TIMEOUT_SECONDS * SLEEP
 
-void log_message(const char* format, ...) {
-    int i=0;
-    while(logger.dirty && i < TIMEOUT) {
+void log_message(const char *format, ...)
+{
+    int i = 0;
+    while (logger.dirty && i < TIMEOUT)
+    {
         svcSleepThread(SLEEP);
         i++;
     }
